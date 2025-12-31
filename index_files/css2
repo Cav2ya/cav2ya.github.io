@@ -1,0 +1,51 @@
+/* Modal overlay */
+.video-modal {
+  display: none;                     /* hidden by default */
+  position: fixed !important;        /* force on top */
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0,0,0,0.85) !important;
+  z-index: 9999 !important;          /* on top of everything */
+
+  display: flex !important;
+  align-items: center !important;    /* vertical center */
+  justify-content: center !important;/* horizontal center */
+  padding: 20px !important;
+
+  /* fade + zoom animation */
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Show class triggers animation */
+.video-modal.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Modal box */
+.video-modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 1100px;
+}
+
+/* Responsive iframe */
+.video-modal-content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+}
+
+/* Close button */
+.video-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 32px;
+  color: #9333EA;
+  cursor: pointer;
+}
