@@ -1,0 +1,63 @@
+/* Demo Reel / video trigger button */
+.demo-reel-btn {
+  cursor: pointer;
+  background: none;
+  border: 1px solid currentColor;
+  padding: 12px 24px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.demo-reel-btn:hover {
+  opacity: 0.8;
+}
+
+/* Modal overlay */
+.video-modal {
+  display: none;             /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  /* fade + zoom animation */
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+/* Show class triggers animation */
+.video-modal.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Modal box */
+.video-modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 1100px;
+}
+
+/* Responsive iframe */
+.video-modal-content iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+}
+
+/* Close button */
+.video-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 32px;
+  color: #9333EA;
+  cursor: pointer;
+}
